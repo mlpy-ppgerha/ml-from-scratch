@@ -23,10 +23,12 @@ sc_y = StandardScaler()
 y_train = sc_y.fit_transform(y_train)"""
 
 # Fitting the Regression Model to the dataset
-# Create your regressor here
+from sklearn.tree import DecisionTreeRegressor
+regressor = DecisionTreeRegressor(random_state =0)
+regressor.fit(X,y)
 
 # Predicting a new result
-y_pred = regressor.predict(6.5)
+y_pred = regressor.predict([[5]])
 
 # Visualising the Regression results
 plt.scatter(X, y, color = 'red')
